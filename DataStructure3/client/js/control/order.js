@@ -170,7 +170,7 @@ var orderControl = {
             }
         }
         action = "order.add()"
-        tblMain.append('</tbody><tfoot><tr><td class="text-center"><input onkeyup="order.searchCustomer()" class="form-control" type="text" name="ccode" id="ccode" placeholder="Customer code"></td><td class="text-center"><input onkeyup="order.searchProduct()" class="form-control" type="text" name="pcode" id="pcode" placeholder="Product code"></td><td class="text-center"><input class="form-control" type="number" name="quantity" id="quantity" placeholder="Quantity(es)"></td><td><div class="btn btn-success text-center" onclick="' + action + '">Add</div></td></tr></tfoot>');
+        tblMain.append('</tbody><tfoot><tr><td class="text-center"><input onkeyup="order.searchCustomer()" class="form-control" type="text" name="ccode" id="ccode" placeholder="Customer code"></td><td class="text-center"><input onkeyup="order.searchProduct()" class="form-control" type="text" name="pcode" id="pcode" placeholder="Product code"></td><td class="text-center"><input class="form-control" type="number" name="quantity" id="quantity" placeholder="Quantity(es)"></td><td><div onclick="' + action + '"><span class="glyphicon glyphicon-plus" aria-hidden="true"/></span></div></td></tr></tfoot>');
 
     },
     loadCusToTblSearch: function(data) {

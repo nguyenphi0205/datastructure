@@ -8,31 +8,23 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
 </head>
 
-<body background="C:\Users\nguyenphi\Desktop\DataStructureAndAlgorithm\assignment_dsa_client\image\Trees_1920x1234.png">
-
-    <div>
-        <center>
-            <h1>BOOK STORE</h1>
-        </center>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" id="closebtn" class="closebtn" onclick="closeNav()" style="right: 0px;">&times;</a>
+        <a href="javascript:void(0)" id="openbtn" class="closebtn" onclick="openNav()" style="right: 0px;"></a>
+        <a id="btnLoadAllOrder">Order</a>
+        <a id="btnLoadAllCus">Customer</a>
+        <a id="btnLoadAllPro">Product</a>
     </div>
-    <div >
-        <br>
-        <div class="container">
-            <div class="form-inline">
-                <button class="btn btn-default" id="btnLoadAllOrder"><b>Order(s)</b></button>
-                <button class="btn btn-default" id="btnLoadAllCus"><b>Customer(s)</b></button>
-                <button class="btn btn-default" id="btnLoadAllPro"><b>Product(s)</b></button>
-                <input class="form-control float-right" type="text" id="proSearch" value="" placeholder="Search" />
-                <input class="form-control float-right" type="text" id="cusSearch" value="" placeholder="Search" />
-            </div>
-            <div class="panel panel-default">
-                <div id="mask"></div>
-                <div class="panel-body">
-                    <table id="tblMain" class="table"></table>
-                    <table id="tbl-search" class="table"></table>
-                </div>
+    <div id="main">
+        <div class="panel panel-default">
+            <div id="mask"></div>
+            <div class="panel-body">
+                <table id="tblMain" class="table"></table>
+                <table id="tbl-search" class="table"></table>
             </div>
         </div>
+    </div>
     </div>
     <!-- Modal -->
     <div class="modal fade" id="myModal" role="dialog">
@@ -53,6 +45,7 @@
             </div>
         </div>
     </div>
+
 </body>
 
 </html>

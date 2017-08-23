@@ -131,11 +131,11 @@ var customerControl = {
         if (typeof tblMain !== 'undefined' && data.length > 0) {
             for (var i = 0; i < data.length; i++) {
                 action = 'customer.delete("' + data[i].ccode + '")';
-                tblMain.append("<tr><td class='text-center'>" + data[i].ccode + "</td><td class='text-center'>" + data[i].cusName + "</td><td class='text-center'>" + data[i].phone + "</td><td class='text-center'1><div class='btn btn-danger' onclick='" + action + "'>Delete</div></td></tr>");
+                tblMain.append("<tr><td class='text-center'>" + data[i].ccode + "</td><td class='text-center'>" + data[i].cusName + "</td><td class='text-center'>" + data[i].phone + "</td><td class='text-center'1><div class='' onclick='" + action + "'><span class='glyphicon glyphicon-trash' aria-hidden='true'/></div></td></tr>");
             }
         }
         action = "customer.add()"
-        tblMain.append('</tbody><tfoot><tr><td class="text-center"><input class="form-control" type="text" name="ccode" id="ccode" placeholder="Code"></td><td class="text-center"><input class="form-control" type="text" name="cusName" id="cusName" placeholder="Name"></td><td class="text-center"><input class="form-control" type="number" name="phone" id="phone" placeholder="Phone"></td><td class="text-center"><div class="btn btn-success" onclick="' + action + '">Add</div></td></tr></tfoot>');
+        tblMain.append('</tbody><tfoot><tr><td class="text-center"><input class="form-control" type="text" name="ccode" id="ccode" placeholder="Code"></td><td class="text-center"><input class="form-control" type="text" name="cusName" id="cusName" placeholder="Name"></td><td class="text-center"><input class="form-control" type="number" name="phone" id="phone" placeholder="Phone"></td><td class="text-center"><div class="" onclick="' + action + '"><span class="glyphicon glyphicon-plus" aria-hidden="true"/></div></td></tr></tfoot>');
 
     }
 }

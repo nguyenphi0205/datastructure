@@ -133,11 +133,11 @@ var productControl = {
         if (typeof tblMain !== 'undefined' && data.length > 0) {
             for (var i = 0; i < data.length; i++) {
                 action = 'product.delete("' + data[i].pcode + '")';
-                tblMain.append("<tr><td class='text-center'>" + data[i].pcode + "</td><td class='text-center'>" + data[i].proName + "</td><td class='text-center'>" + data[i].quantity + "</td><td class='text-center'>" + data[i].saled + "</td><td class='text-center'>" + data[i].price + "</td><td class='text-center'><div class='btn btn-danger' onclick='" + action + "'>Delete</div></td></tr>");
+                tblMain.append("<tr><td class='text-center'>" + data[i].pcode + "</td><td class='text-center'>" + data[i].proName + "</td><td class='text-center'>" + data[i].quantity + "</td><td class='text-center'>" + data[i].saled + "</td><td class='text-center'>" + data[i].price + "</td><td class='text-center'><div class='' onclick='" + action + "'><span class='glyphicon glyphicon-trash' aria-hidden='true'/></div></td></tr>");
             }
         }
         action = "product.add()"
-        tblMain.append('</tbody><tfoot><tr><td class="text-center"><input class="form-control" type="text" name="pcode" id="pcode" placeholder="Code"></td><td class="text-center"><input class="form-control" type="text" name="proName" id="proName" placeholder="Name"></td><td class="text-center"><input class="form-control" type="number" name="quantity" id="quantity" placeholder="Quantity"></td><td class="text-center"><input class="form-control" type="number" name="saled" id="saled" placeholder="Saled"></td><td class="text-center"><input class="form-control" type="number" name="price" id="price" placeholder="Price"></td><td class="text-center"><div class="btn btn-success" onclick="' + action + '">Add</div></td></tr></tfoot>');
+        tblMain.append('</tbody><tfoot><tr><td class="text-center"><input class="form-control" type="text" name="pcode" id="pcode" placeholder="Code"></td><td class="text-center"><input class="form-control" type="text" name="proName" id="proName" placeholder="Name"></td><td class="text-center"><input class="form-control" type="number" name="quantity" id="quantity" placeholder="Quantity"></td><td class="text-center"><input class="form-control" type="number" name="saled" id="saled" placeholder="Saled"></td><td class="text-center"><input class="form-control" type="number" name="price" id="price" placeholder="Price"></td><td class="text-center"><div class="" onclick="' + action + '"><span class="glyphicon glyphicon-plus" aria-hidden="true"/></div></td></tr></tfoot>');
 
     }
 }
