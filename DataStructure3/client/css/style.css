@@ -103,6 +103,21 @@ body {
     font-size: 30px;
 }
 
-.glyphicon-trash{
+.glyphicon-trash, .glyphicon-search{
+    color: white;
     font-size: 20px
+}
+
+#proSearch, #cusSearch{
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
+
+.glyphicon-search{
+    float: right;
+    padding:15px 65px 0px 0px !important;
+}
+
+.col-md-11{
+    margin-top: 10px !important;
 }

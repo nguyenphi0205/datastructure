@@ -20,7 +20,7 @@ public class ReadFile {
 	private static final Logger logger = Logger.getLogger(ReadFile.class);
 
     /**
-     * read file from url
+     *
      * @param url url to file
      * @return String in file
      */

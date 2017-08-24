@@ -1,6 +1,10 @@
 $(document).ready(function() {
     $('#btnLoadAllPro').click(function() {
         product.init();
+        document.getElementById("mySidenav").style.width = "20px";
+        document.getElementById("main").style.marginLeft = "20px";
+        $("#closebtn").hide();
+        $("#openbtn").show();
     });
     $('#addProduct').click(function() {
         product.add();
@@ -8,7 +12,7 @@ $(document).ready(function() {
     $('#sortProduct').click(function() {
         product.sort();
     });
-    $("#proSearch").on("keyup", function() {
+    $("#proSearchBtn").click(function() {
         // console.log($("#cusSearch").val());
         product.search();
     });
@@ -21,6 +25,8 @@ var product = {
         script.productTabSwich();
         $("#cusSearch").hide();
         $("#proSearch").show();
+        $("#proSearchBtn").show();
+        $("#cusSearchBtn").hide();
         $("#tbl-search").empty();
     },
     getAll: function() {
@@ -56,7 +62,7 @@ var product = {
             error: function(request, status, error) {
                 if (request.status == 403) {
                     $("#id-modal-title").text("Add Error");
-                    $("#id-modal-content").text("Product code has existed.")
+                    $("#id-modal-content").text("Product code already exists.")
                     $('#myModal').modal('show');
                 }
                 if (request.status == 400) {

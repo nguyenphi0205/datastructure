@@ -1,6 +1,10 @@
 $(document).ready(function() {
     $('#btnLoadAllCus').click(function() {
         customer.init();
+        document.getElementById("mySidenav").style.width = "20px";
+        document.getElementById("main").style.marginLeft = "20px";
+        $("#closebtn").hide();
+        $("#openbtn").show();
     });
     $('#addCustomer').click(function() {
         customer.add();
@@ -8,7 +12,7 @@ $(document).ready(function() {
     $('#sortCustomer').click(function() {
         customer.sort();
     });
-    $("#cusSearch").on("keyup", function() {
+    $("#cusSearchBtn").click(function() {
         customer.search();
     });
 });
@@ -19,7 +23,9 @@ var customer = {
         customer.getAll();
         script.customerTabSwich();
         $("#proSearch").hide();
-        $("#cusSearch").show();
+        $("#cusSearch").show();        
+        $("#proSearchBtn").hide();
+        $("#cusSearchBtn").show();
         $("#tbl-search").empty();
     },
     getAll: function() {
@@ -54,7 +60,7 @@ var customer = {
             error: function(request, status, error) {
                 if (request.status == 403) {
                     $("#id-modal-title").text("Add Error");
-                    $("#id-modal-content").text("Customer code has existed.");
+                    $("#id-modal-content").text("Customer code already exists.");
                     $('#myModal').modal('show');
                 }
                 if (request.status == 400) {

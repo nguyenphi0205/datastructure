@@ -1,6 +1,10 @@
 $(document).ready(function() {
     $('#btnLoadAllOrder').click(function() {
-        order.init();
+        order.init();        
+        document.getElementById("mySidenav").style.width = "20px";
+        document.getElementById("main").style.marginLeft = "20px";
+        $("#closebtn").hide();
+        $("#openbtn").show();
     })
 
     $("#sortOrderByCCode").click(function() {
@@ -18,7 +22,9 @@ var order = {
         order.getAll();
         script.orderTabSwich();
         $("#proSearch").hide();
-        $("#cusSearch").hide();
+        $("#cusSearch").hide();          
+        $("#proSearchBtn").hide();
+        $("#cusSearchBtn").hide();
         $("#tbl-search").empty();
     },
     getAll: function() {
@@ -57,8 +63,8 @@ var order = {
                     $('#myModal').modal('show');
                 }
                 if (request.status == 400) {
-                    $("#id-modal-title").text("Warning");
-                    $("#id-modal-content").text("Please fill all the information.");
+                    $("#id-modal-title").text("Error");
+                    $("#id-modal-content").text("All fields need requiring to fill");
                     $('#myModal').modal('show');
                 }
             }

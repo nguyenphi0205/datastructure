@@ -7,17 +7,14 @@ package etc;
  * this is class to define all constants in project
  */
 public class Constants {
-	
-	//URL host to filesrc\java\etc\data\customer_list.txt
-//	public static String ROOT_PATH = "/home/local/SUTRIXMEDIA1/ngoc.pt/Documents/green/code/DataStructureAndAlgorithm/assignmentdsa/";
-	public static final String ROOT_PATH = "C:\\Users\\nguyenphi\\Documents\\NetBeansProjects\\DataStructure3\\";
+	public static final String ROOT_PATH = "/home/panda/Documents/datastructure/DataStructure3/";
 
 	//URI to file
-    public static final String CUSTOMER_DATA_URL = "src\\java\\etc\\data\\customer_list.txt";
+    public static final String CUSTOMER_DATA_URL = "src/java/etc/data/customer_list.txt";
 
-    public static final String ORDER_DATA_URL = "src\\java\\etc\\data\\order_list.txt";
+    public static final String ORDER_DATA_URL = "src/java/etc/data/order_list.txt";
 
-    public static final String PRODUCT_DATA_URL = "src\\java\\etc\\data\\product_list.txt";
+    public static final String PRODUCT_DATA_URL = "src/java/etc/data/product_list.txt";
     
     //Param of customer
     public static final String CUSTOMER_CCODE = "ccode";

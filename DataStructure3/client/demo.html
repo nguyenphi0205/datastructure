@@ -15,16 +15,24 @@
         <a id="btnLoadAllOrder">Order</a>
         <a id="btnLoadAllCus">Customer</a>
         <a id="btnLoadAllPro">Product</a>
-    </div>
-    <div id="main">
+    </div>    
+    <div id="main" class="col-md-12">    
+        <div class="col-md-6 col-md-offset-6">
+            <div class="col-md-11">
+                <input class="form-control float-right" id="proSearch" type="text"  value="" placeholder="Search" />
+                <input class="form-control float-right" id="cusSearch" type="text"  value="" placeholder="Search" />
+            </div>
+            <div class="col-md-1">
+                <span class="glyphicon glyphicon-search" id="proSearchBtn" aria-hidden="true"></span>                
+                <span class="glyphicon glyphicon-search" id="cusSearchBtn" aria-hidden="true"></span>
+            </div>
+        </div>
         <div class="panel panel-default">
             <div id="mask"></div>
             <div class="panel-body">
                 <table id="tblMain" class="table"></table>
-                <table id="tbl-search" class="table"></table>
             </div>
         </div>
-    </div>
     </div>
     <!-- Modal -->
     <div class="modal fade" id="myModal" role="dialog">
