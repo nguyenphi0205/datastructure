@@ -17,36 +17,37 @@ import etc.Constants;
  * this class will read file
  */
 public class ReadFile {
-	private static final Logger logger = Logger.getLogger(ReadFile.class);
+
+    private static final Logger logger = Logger.getLogger(ReadFile.class);
 
     /**
      *
      * @param url url to file
      * @return String in file
      */
-    public static String read(String url){
+    public static String read(String url) {
         FileInputStream fileInputStream = null;
         String result = "";
         try {
-        	fileInputStream = new FileInputStream(Constants.ROOT_PATH + url);
+            fileInputStream = new FileInputStream(Constants.ROOT_PATH + url);
             DataInputStream dataInputStream = new DataInputStream(fileInputStream);
             result = dataInputStream.readUTF();
             dataInputStream.close();
         } catch (FileNotFoundException e) {
-            logger.error("FileNotFoundException: ",e);
+            logger.error("FileNotFoundException: ", e);
         } catch (IOException e) {
-            logger.error("IOException: ",e);
+            logger.error("IOException: ", e);
         } finally {
             if (fileInputStream != null) {
                 try {
-                	fileInputStream.close();
+                    fileInputStream.close();
                 } catch (IOException e) {
-                    logger.error("IOException: ",e);
+                    logger.error("IOException: ", e);
                 }
             }
         }
-        if(result==""){
-        	return Constants.DEFAULT_RESULT;
+        if (result == "") {
+            return Constants.DEFAULT_RESULT;
         }
         return result;
     }

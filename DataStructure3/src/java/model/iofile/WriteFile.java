@@ -16,15 +16,17 @@ import etc.Constants;
  * this class will write file
  */
 public class WriteFile {
-	private static final Logger logger = Logger.getLogger(WriteFile.class);
+
+    private static final Logger logger = Logger.getLogger(WriteFile.class);
 
     /**
      * method to write file
+     *
      * @param url url to file
      * @param data String data write
      * @return true if done
      */
-    public static boolean write(String url, String data){
+    public static boolean write(String url, String data) {
         FileOutputStream fos = null;
         try {
             fos = new FileOutputStream(Constants.ROOT_PATH + url);
@@ -33,16 +35,16 @@ public class WriteFile {
             dos.close();
             fos.close();
         } catch (FileNotFoundException e) {
-            logger.error("FileNotFoundException: ",e);
+            logger.error("FileNotFoundException: ", e);
             return false;
         } catch (IOException e) {
-            logger.error("IOException: ",e);
+            logger.error("IOException: ", e);
         } finally {
-            if(fos != null) {
+            if (fos != null) {
                 try {
                     fos.close();
                 } catch (IOException e) {
-                    logger.error("IOException: ",e);                    
+                    logger.error("IOException: ", e);
                 }
             }
         }

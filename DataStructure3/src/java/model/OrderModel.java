@@ -12,10 +12,11 @@ import org.json.JSONObject;
 
 import util.collection.DoubleLinkedLstQueue;
 import util.sort.Sort;
-import util.sort.impl.SelectSort;
+import util.sort.impl.BubleSort;
 import etc.Constants;
 
 public class OrderModel {
+
     private static final String FORMAT_SEARCH_TEXT = "{\"customer\":%s,\"product\":%s}";
 
     public OrderModel() {
@@ -62,27 +63,29 @@ public class OrderModel {
         Sort<Order> orderSort = null;
         if (isPCode) {
             if (Constants.TYPE_SORT.equals(Constants.SELECT_SORT)) {
-                orderSort = new SelectSort<Order>() {
+                orderSort = new BubleSort<Order>() {
                     public boolean compare(Object o, Object o1) {
                         Order order = (Order) o;
                         Order order1 = (Order) o1;
-                        if (isLowToHigh)
+                        if (isLowToHigh) {
                             return order.getPcode().compareTo(order1.getPcode()) > 0;
-                        else
+                        } else {
                             return order.getPcode().compareTo(order1.getPcode()) < 0;
+                        }
                     }
                 };
             }
         } else {
             if (Constants.TYPE_SORT.equals(Constants.SELECT_SORT)) {
-                orderSort = new SelectSort<Order>() {
+                orderSort = new BubleSort<Order>() {
                     public boolean compare(Object o, Object o1) {
                         Order order = (Order) o;
                         Order order1 = (Order) o1;
-                        if (isLowToHigh)
+                        if (isLowToHigh) {
                             return order.getCcode().compareTo(order1.getCcode()) > 0;
-                        else
+                        } else {
                             return order.getCcode().compareTo(order1.getCcode()) < 0;
+                        }
                     }
                 };
             }

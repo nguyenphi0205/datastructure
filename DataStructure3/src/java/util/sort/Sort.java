@@ -9,6 +9,8 @@ import util.collection.DoubleLinkedLstQueue;
  * the interface to define structure all of sort
  */
 public interface Sort<E> {
-    boolean compare(E o,E o1);
+
+    boolean compare(E o, E o1);
+
     DoubleLinkedLstQueue<E> sort(DoubleLinkedLstQueue<E> o);
 }

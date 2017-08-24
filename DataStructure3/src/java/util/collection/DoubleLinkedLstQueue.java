@@ -9,6 +9,7 @@ public class DoubleLinkedLstQueue<E> {
     private LinkedLst current = null;
 
     class LinkedLst {
+
         E e;
         LinkedLst next;
         LinkedLst previous;
@@ -115,9 +116,11 @@ public class DoubleLinkedLstQueue<E> {
     }
 
     public E delete(int location) {
-        if (location < 1) deleteFirst();
-        else if (location > length() - 2) deleteLast();
-        else {
+        if (location < 1) {
+            deleteFirst();
+        } else if (location > length() - 2) {
+            deleteLast();
+        } else {
             LinkedLst linkedLst = head;
             for (int i = 0; i < location - 1; i++) {
                 linkedLst = linkedLst.next;
@@ -131,9 +134,11 @@ public class DoubleLinkedLstQueue<E> {
     }
 
     public void insertAt(int location, E value) {
-        if (location < 1) insertFirst(value);
-        else if (location > length() - 1) insertLast(value);
-        else {
+        if (location < 1) {
+            insertFirst(value);
+        } else if (location > length() - 1) {
+            insertLast(value);
+        } else {
             LinkedLst linkedLst = head;
             for (int i = 0; i < location - 1; i++) {
                 linkedLst = linkedLst.next;
@@ -145,8 +150,12 @@ public class DoubleLinkedLstQueue<E> {
     }
 
     public E getAt(int location) {
-        if(location < 1) return head.e;
-        if(location > length() - 2) return tail.e;
+        if (location < 1) {
+            return head.e;
+        }
+        if (location > length() - 2) {
+            return tail.e;
+        }
         LinkedLst linkedLst = head;
         for (int i = 0; i < location; i++) {
             linkedLst = linkedLst.next;

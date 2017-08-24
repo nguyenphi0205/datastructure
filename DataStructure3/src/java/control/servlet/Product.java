@@ -1,4 +1,5 @@
 package control.servlet;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -25,11 +26,12 @@ import etc.Constants;
  * this is servlet class provided Order API
  */
 public class Product extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-	private static final Logger logger = Logger.getLogger(Product.class);
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Init.setHeader(request, response);
+    private static final long serialVersionUID = 1L;
+    private static final Logger logger = Logger.getLogger(Product.class);
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Init.setHeader(request, response);
         PrintWriter print = response.getWriter();
         String action = request.getParameter(Constants.ACTION);
         if (StringUtils.isBlank(action)) {
@@ -41,7 +43,7 @@ public class Product extends HttpServlet {
             print.write(ReadFile.read(Constants.PRODUCT_DATA_URL));
             return;
         }
-        
+
         if (action.equals(Constants.ADD_ACTION)) {
             String pcode = request.getParameter(Constants.PRODUCT_CODE);
             String proName = request.getParameter(Constants.PRODUCT_NAME);
@@ -49,19 +51,19 @@ public class Product extends HttpServlet {
             String saled = request.getParameter(Constants.PRODUCT_SALE);
             String price = request.getParameter(Constants.PRODUCT_PRICE);
             if (StringUtils.isBlank(pcode) || StringUtils.isBlank(proName) || StringUtils.isBlank(quantity)
-            		|| StringUtils.isBlank(saled) || StringUtils.isBlank(price)) {
+                    || StringUtils.isBlank(saled) || StringUtils.isBlank(price)) {
                 Init.badRequest(response);
                 return;
             }
             int quantityInte = 0;
             int saledInte = 0;
             Double priceDoub = 0.0;
-            try{
-            	quantityInte = Integer.parseInt(quantity);
-            	saledInte = Integer.parseInt(saled);
-            	priceDoub = Double.parseDouble(price);
-            }catch(ParseException ex){
-            	logger.error("ParseException: ",ex);
+            try {
+                quantityInte = Integer.parseInt(quantity);
+                saledInte = Integer.parseInt(saled);
+                priceDoub = Double.parseDouble(price);
+            } catch (ParseException ex) {
+                logger.error("ParseException: ", ex);
             }
             model.entities.Product product = new model.entities.Product();
             product.setPcode(pcode);
@@ -76,7 +78,7 @@ public class Product extends HttpServlet {
             Init.forbidden(response);
             return;
         }
-        
+
         if (action.equals(Constants.DELETE_ACTION)) {
             String pcode = request.getParameter(Constants.PRODUCT_CODE);
             if (StringUtils.isBlank(pcode)) {
@@ -90,7 +92,7 @@ public class Product extends HttpServlet {
             Init.forbidden(response);
             return;
         }
-        
+
         if (action.equals(Constants.SORT_ACTION)) {
             String strLowToHigh = request.getParameter(Constants.IS_LOW_TO_HIGH);
             if (StringUtils.isBlank(strLowToHigh) || !(strLowToHigh.equals("1") || strLowToHigh.equals("0"))) {
@@ -114,7 +116,7 @@ public class Product extends HttpServlet {
             return;
         }
         print.write(Constants.DEFAULT_RESULT);
-	}
+    }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request, response);

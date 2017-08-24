@@ -9,7 +9,7 @@ import util.sort.Sort;
  *
  * define the select sort
  */
-public abstract class SelectSort<E> implements Sort {
+public abstract class BubleSort<E> implements Sort {
 
     /**
      * method sort
@@ -30,12 +30,12 @@ public abstract class SelectSort<E> implements Sort {
 //                    temp = (DoubleLinkedLstQueue) el;//bien tam bang object j-1
 //                    el = e;//object j=j-1
 //                    e = (E) temp;//gan lai temp=j
-                    swap(doubleLinkedLstQueue, j-1, j);
-                    
+                    swap(doubleLinkedLstQueue, j - 1, j);
+
                 }
             }
         }
-        
+
         return doubleLinkedLstQueue;
         //buble sort
 //        for (int i = 0; i < doubleLinkedLstQueue.length() - 1; i++) {
